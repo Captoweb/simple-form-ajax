@@ -1,0 +1,53 @@
+ body{ 
+     background: #E4E4E4;
+     margin-left: 50px;
+}
+
+.message{
+    border: 1px solid green;
+    background: #93c54b; 
+    padding: 6px 12px;
+    border-radius: .25rem;
+    font-size: 16px;
+    display: none;
+}
+#ajaxerror{
+    border: 1px solid red;
+    background: #dc3545; 
+    padding: 6px 12px;
+    border-radius: .25rem;
+    font-size: 16px;
+    display: none;
+}
+.otpravka{
+    padding: 6px 12px;
+    box-sizing: border-box;
+    display: inline-block;
+    background: rgb(255, 193, 7);
+    border: 1px solid #ffc107;
+    border-radius: .25rem;
+    font-size: 16px;
+}
+.otpravka:hover{
+    background: #edb100;
+}
+
+.title{
+    padding: 5px 9px;
+    font-size: 16px;
+    max-width: 100%;
+    border-radius: .25rem;
+    border: 1px solid black;
+}
+
+.content{
+    padding: 10px;
+    font-size: 16px;
+    border-radius: .25rem;
+    border: 1px solid black;
+    max-height: 600px;
+    min-height: 60px;
+    display: block;
+
+}
+

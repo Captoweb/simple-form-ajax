@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uzbecajax</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h1>Hello AJAX</h1>
+    
+    <span id = "ajax000" class="message"></span>
+    <span id = "ajaxerror" class="message"></span>
+   
+        <p><input type="text" name="title" class="title"></p>
+        <p><textarea name="content" class="content"></textarea></p>
+        <button class="otpravka">Submit</button>
+   
+    <script>
+        $(function() {
+            $('button.otpravka').on('click', function(){
+              var titleValue = $('input.title').val();
+              var contentValue = $('textarea.content').val();
+                
+                if ((titleValue.length < 1), (contentValue.length < 1))  { // проверка на пустую строку
+                    $( "#ajaxerror" ). html('Заполните поля!').fadeIn(1500).fadeOut(1500); 
+                } else { 
+                // отправить в файл some.php 
+                $.ajax({
+                  method: "POST",
+                  url: "some.php", //куда
+                  data: { title: titleValue, content: contentValue }
+                  })
+                    .done(function() {
+                      $( "#ajax000" ). html('Данные успешно отправленны!').fadeIn(1500).fadeOut(1500);
+                      $( "#ajax111" ). html(titleValue).fadeOut(5000);
+                      $( "#ajax222" ). html(contentValue).fadeOut(5000);
+               
+                  });
+                $('input.title').val(''); // добавляет в инпуты пустые строчки
+                $('textarea.content').val(''); // добавляет в инпуты пустые строчки
+                     }
+             })
+        });
+        
+    </script>
+    
+    <br><br> 
+    <div id="ajax111"></div>
+    <div id="ajax222"></div>
+    
+</body>
+</html>
